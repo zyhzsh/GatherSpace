@@ -1,6 +1,6 @@
-## ![Logo](./doc/static/img/logo.png)
+<img src="https://raw.githubusercontent.com/zyhzsh/GatherSpace/main/doc/static/img/Logo.png" title="Logo" alt="Nest.Js" width="300" height="100"/>
 
-## Hosting your events, share your joy
+## Hosting your events, sharing your joy
 
 ### :pushpin: Guide
 

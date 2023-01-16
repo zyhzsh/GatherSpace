@@ -47,8 +47,7 @@ const config = {
         },
         items: [
           {
-            href: 'https://google.com',
-            // label: 'GitHub',
+            href: 'https://github.com/zyhzsh/GatherSpace',
             className: "header-github-link",
             "aria-label": "GitHub repository",
             position: 'right',
