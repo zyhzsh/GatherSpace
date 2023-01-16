@@ -4,8 +4,10 @@
 
 ### :pushpin: Guide
 
-- [Documentation]()
+- [Documentation](https://gather-space.vercel.app/docs/Introduction)
 - [Preview]()
+- [Design]()
+- [Architecture]()
 
 ### :hammer_and_wrench: Stack
 
