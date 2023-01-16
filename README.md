@@ -26,7 +26,7 @@
 <table align=center>
   <tbody>
     <tr>
-    <td align="center"><a><img src="https://avatars.githubusercontent.com/u/67240191?v=4" width="100px;" alt="Shenghang Zhu"/><br><sub><b>Shenghang Zhu</b></a></td>
+    <td align="left"><a><img src="https://avatars.githubusercontent.com/u/67240191?v=4" width="100px;" alt="Shenghang Zhu"/><br><sub><b>Shenghang Zhu</b></a></td>
     </tr>
   </tbody>
 </table>
