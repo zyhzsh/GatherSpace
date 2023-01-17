@@ -15,7 +15,7 @@ const config = {
   favicon: 'img/favicon.ico',
   i18n: {
     defaultLocale: 'en',
-    locales: ['en','zh-CN'],
+    locales: ['en'],
   },
   themes: [
     '@easyops-cn/docusaurus-search-local',
