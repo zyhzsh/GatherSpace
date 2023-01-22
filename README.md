@@ -4,7 +4,7 @@
 
 ### :pushpin: Guide
 
-- [Documentation](https://gather-space.vercel.app/docs/Introduction)
+- [Documentation](https://gatherspace.shenghangzhu.com/docs/Overview)
 - [Preview]()
 - [Design]()
 - [Architecture]()
