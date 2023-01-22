@@ -1,6 +1,8 @@
 import DraftArchitecture from '@site/src/img/draft-architecture.png';
 import DraftArchitectureAnalysis from '@site/src/img/draft-analysis-architecture.png';
 
+# System design
+
 ### Starting with
 
 <img src={DraftArchitecture} />

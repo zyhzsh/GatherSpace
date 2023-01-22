@@ -1,0 +1,44 @@
+version: '3.9'
+services:
+  user_service:
+    container_name: user_service
+    build:
+      dockerfile: ./userservice/Dockerfile
+      target: development
+    env_file:
+      - ./userservice/.env
+    command: npm run start:dev
+    depends_on:
+      - test_database
+    volumes:
+      - ./userservice:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - '4000:3000'
+
+  test_database:
+    container_name: test_database
+    image: postgres
+    restart: always
+    ports:
+      - '5432:5432'
+    volumes:
+      - ./db/local_postgres.init.sql:/docker-entrypoint-initdb.d/docker_postgres_init.sql
+    environment:
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_USER=root
+
+  nginx_load_balancer:
+    container_name: loader_balancer
+    image: nginx
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/nginx.conf
+    ports:
+      - '80:80'
+
+  # rabbitmq:
+  #   container_name: event_bus
+  #   image: rabbitmq:3-management
+  #   ports:
+  #     - '8080:15672'
+  #     - '5672:5672'
