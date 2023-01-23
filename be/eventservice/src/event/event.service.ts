@@ -1,6 +1,6 @@
 import { Injectable, NotAcceptableException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { In, Like, Raw, Repository } from 'typeorm';
 import { CreateEventDto } from './dto/create-event.dto';
 import { FindEventQuery } from './dto/find-event-query.dto';
 import { UpdateEventDto } from './dto/update-event.dto';
@@ -29,17 +29,20 @@ export class EventService {
   }
 
   async findEvents(query: FindEventQuery) {
-    const { limit, offset, hosterId } = query;
-
-    console.log(hosterId);
-    return this.eventRepository.find({
+    const { limit, offset, hosterId, participantId } = query;
+    let result = [];
+    result = await this.eventRepository.find({
       where: {
-        //hoster: { userId: hosterId ? Like(`%${hosterId}%`) : Like('%') },
-        hoster: { userId: 'sss' },
+        hoster: { userId: hosterId },
+        participants: Raw(
+          (alias) => `participants @> '[{"userId":"${participantId}"}]'`,
+        ),
       },
       skip: offset,
       take: limit,
     });
+
+    return result;
   }
 
   async findOne(id: string) {

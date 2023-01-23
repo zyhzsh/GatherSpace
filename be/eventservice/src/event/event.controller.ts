@@ -35,12 +35,11 @@ export class EventController {
 
   @Put(':id')
   updateEvent(@Param('id') id: string, @Body() updateEvent: UpdateEventDto) {
-    //console.log(updateEvent);
     return this.eventService.update(id, updateEvent);
   }
 
-  // @Get()
-  // getEvents(@Query() searchQuery: FindEventQuery) {
-  //   return this.eventService.findEvents(searchQuery);
-  // }
+  @Get()
+  getEvents(@Query() searchQuery: FindEventQuery) {
+    return this.eventService.findEvents(searchQuery);
+  }
 }
