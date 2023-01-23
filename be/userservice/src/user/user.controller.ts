@@ -25,13 +25,13 @@ export class UserController {
     return this.userService.create(createUserDto);
   }
 
-  @Put()
-  updateProfile(@Body() updateUserDto: UpdateUserDto) {
-    return this.userService.findAll();
+  @Put(':id')
+  updateProfile(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
+    return this.userService.update(id, updateUserDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.userService.remove(+id);
+    return this.userService.remove(id);
   }
 }

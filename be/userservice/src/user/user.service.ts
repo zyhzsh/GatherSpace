@@ -1,8 +1,7 @@
 import {
+  BadRequestException,
   Injectable,
-  InternalServerErrorException,
   NotAcceptableException,
-  NotFoundException,
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
@@ -18,23 +17,54 @@ export class UserService {
   ) {}
 
   async create(createUserDto: CreateUserDto) {
-    const newUser = await this.userRepository.create(createUserDto);
-    return this.userRepository.save(newUser);
+    const { userId } = createUserDto;
+    const result = await this.isUserExist(userId);
+    if (result) {
+      throw new NotAcceptableException();
+    } else {
+      const newUser = await this.userRepository.create(createUserDto);
+      return this.userRepository.save(newUser);
+    }
   }
 
-  findOne(id: string) {
-    return this.userRepository.findOne({ where: { userId: id } });
+  async findOne(id: string) {
+    return await this.userRepository.findOne({ where: { userId: id } });
   }
 
-  findAll() {
-    return `This action returns all user`;
+  async isUserExist(id: string): Promise<boolean> {
+    const user = await this.userRepository.findOne({ where: { userId: id } });
+    if (user) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
-  update(id: number, updateUserDto: UpdateUserDto) {
-    return `This action updates a #${id} user`;
+  async update(id: string, updateUserDto: UpdateUserDto) {
+    try {
+      const result = await this.isUserExist(id);
+      if (result) {
+        const updatedResult = await this.userRepository
+          .createQueryBuilder()
+          .update(updateUserDto)
+          .where({ userId: id })
+          .returning('*')
+          .execute();
+        const user = updatedResult.raw[0];
+        return user;
+      } else {
+        throw new BadRequestException('asdsds');
+      }
+    } catch (err) {
+      return err.response;
+    }
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} user`;
+  async remove(id: string) {
+    const userProfileToRemove = await this.findOne(id);
+    if (userProfileToRemove) {
+      await this.userRepository.remove(userProfileToRemove);
+    }
+    return;
   }
 }

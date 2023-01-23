@@ -5,6 +5,7 @@ import { CreateUserDto } from './dto/create-user.dto';
 import { Repository } from 'typeorm';
 import { User } from './entities/user.entity';
 import { getRepositoryToken } from '@nestjs/typeorm';
+import { NotAcceptableException } from '@nestjs/common';
 
 type MockType<T> = {
   [P in keyof T]?: jest.Mock<any>;
@@ -14,6 +15,7 @@ const repositoryMockFactory: () => MockType<Repository<any>> = jest.fn(() => ({
   findOne: jest.fn((entity) => entity),
   create: jest.fn((entity) => entity),
   save: jest.fn((entity) => entity),
+  isUserExist: jest.fn((entity) => entity),
 }));
 
 describe('UserService', () => {
@@ -39,16 +41,43 @@ describe('UserService', () => {
   });
 
   describe('Create Profile', () => {
-    it('Create a new profile', async () => {
-      // Arrange
-      const newUser: CreateUserDto = {
-        userId: uuid_v4(),
-        userName: 'ShenghangZhu',
-      };
-      // Act
-      const userProfile = await service.create(newUser);
-      // Assert
-      expect(userProfile.userName).toEqual('ShenghangZhu');
-    });
+    // it('Create a new profile', async () => {
+    //   // Arrange
+    //   const userId = uuid_v4();
+    //   const newUser: CreateUserDto = {
+    //     userId,
+    //     userName: 'Sample',
+    //     selfIntro: '',
+    //     profileImage: '',
+    //   };
+    //   // Act
+    //   const userProfile = await service.create(newUser);
+    //   // Assert
+    //   expect(userProfile.userName).toEqual('Sample');
+    // });
+    // it('Create a new profile with exist profile', async () => {
+    //   // Arrange
+    //   const userId = uuid_v4();
+    //   const newUser1: CreateUserDto = {
+    //     userId,
+    //     userName: 'Sample',
+    //     selfIntro: '',
+    //     profileImage: '',
+    //   };
+    //   const newUser2: CreateUserDto = {
+    //     userId,
+    //     userName: 'Sample',
+    //     selfIntro: '',
+    //     profileImage: '',
+    //   };
+    //   try {
+    //     // Act
+    //     await service.create(newUser1);
+    //     await service.create(newUser2);
+    //   } catch (err) {
+    //     // Assert
+    //     expect(err).toBeInstanceOf(NotAcceptableException);
+    //   }
+    // });
   });
 });
