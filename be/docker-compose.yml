@@ -3,18 +3,29 @@ services:
   user_service:
     container_name: user_service
     build:
-      dockerfile: ./userservice/Dockerfile
+      context: ./userservice
       target: development
     env_file:
-      - ./userservice/.env
+      - ./userservice/.env.dev.compose
     command: npm run start:dev
-    depends_on:
-      - test_database
     volumes:
       - ./userservice:/usr/src/app
       - /usr/src/app/node_modules
     ports:
       - '4000:3000'
+  event_service:
+    container_name: event_service
+    build:
+      context: ./eventservice
+      target: development
+    env_file:
+      - ./eventservice/.env.dev.compose
+    command: npm run start:dev
+    volumes:
+      - ./eventservice:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - '4001:3000'
 
   test_database:
     container_name: test_database
