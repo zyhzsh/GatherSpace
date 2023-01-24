@@ -16,7 +16,6 @@ import { EventModule } from './event/event.module';
       autoLoadEntities: true,
       synchronize: true,
       entities: ['dist/**/*.entity.js'],
-      logging: true,
     }),
     EventModule,
   ],

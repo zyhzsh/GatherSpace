@@ -1,6 +1,6 @@
 import { Injectable, NotAcceptableException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { In, Like, Raw, Repository } from 'typeorm';
+import { Raw, Repository } from 'typeorm';
 import { CreateEventDto } from './dto/create-event.dto';
 import { FindEventQuery } from './dto/find-event-query.dto';
 import { UpdateEventDto } from './dto/update-event.dto';
@@ -35,7 +35,7 @@ export class EventService {
       where: {
         hoster: { userId: hosterId },
         participants: Raw(
-          (alias) => `participants @> '[{"userId":"${participantId}"}]'`,
+          () => `participants @> '[{"userId":"${participantId}"}]'`,
         ),
       },
       skip: offset,
@@ -61,6 +61,6 @@ export class EventService {
     updateEvent.title = updateEventDto.title;
     updateEvent.announcements = updateEventDto.announcements;
     updateEvent.participants = updateEventDto.participants;
-    await this.eventRepository.save(updateEvent);
+    return await this.eventRepository.save(updateEvent);
   }
 }
