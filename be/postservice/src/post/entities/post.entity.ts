@@ -11,6 +11,9 @@ export class Post {
   @PrimaryGeneratedColumn('uuid')
   postId: string;
 
+  @Column('uuid')
+  eventId: string;
+
   @Column({ nullable: false })
   ownerId: string;
 
@@ -22,6 +25,9 @@ export class Post {
 
   @Column('text', { array: true, default: [] })
   images: string[];
+
+  @Column('jsonb', { default: [] })
+  comments: any;
 
   @CreateDateColumn({
     type: 'timestamp',

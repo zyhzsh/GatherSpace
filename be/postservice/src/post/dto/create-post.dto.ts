@@ -1,19 +1,24 @@
-import { IsNotEmpty, IsOptional, IsString } from 'class-validator';
+import { IsNotEmpty, IsOptional, IsString, IsUUID } from 'class-validator';
 
 export class CreatePostDto {
   @IsNotEmpty()
   @IsString()
-  ownerId: string;
+  readonly ownerId: string;
 
   @IsNotEmpty()
   @IsString()
-  title: string;
+  @IsUUID()
+  readonly eventId: string;
 
   @IsNotEmpty()
   @IsString()
-  description: string;
+  readonly title: string;
+
+  @IsNotEmpty()
+  @IsString()
+  readonly description: string;
 
   @IsOptional()
   @IsString({ each: true })
-  images: string[];
+  readonly images: string[];
 }
