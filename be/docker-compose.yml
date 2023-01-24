@@ -26,6 +26,19 @@ services:
       - /usr/src/app/node_modules
     ports:
       - '4001:3000'
+  post_service:
+    container_name: post_service
+    build:
+      context: ./postservice
+      target: development
+    env_file:
+      - ./postservice/.env.dev.compose
+    command: npm run start:dev
+    volumes:
+      - ./postservice:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - '4002:3000'
 
   test_database:
     container_name: test_database
