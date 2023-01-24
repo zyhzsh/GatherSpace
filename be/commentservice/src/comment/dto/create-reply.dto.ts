@@ -1,16 +1,11 @@
 import { IsNotEmpty, IsString, IsUUID, ValidateNested } from 'class-validator';
+import { UserDto } from './create-comment.dto';
 
-export class UserDto {
-  @IsNotEmpty()
-  @IsString()
-  readonly userId: string;
-}
-
-export class CreateCommentDto {
+export class CreateReplyDto {
   @IsString()
   @IsUUID()
   @IsNotEmpty()
-  readonly postId: string;
+  readonly commentId: string;
 
   @IsNotEmpty()
   @ValidateNested({ each: true })
