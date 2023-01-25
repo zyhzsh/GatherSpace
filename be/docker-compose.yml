@@ -39,7 +39,19 @@ services:
       - /usr/src/app/node_modules
     ports:
       - '4002:3000'
-
+  comment_service:
+    container_name: comment_service
+    build:
+      context: ./commentservice
+      target: development
+    env_file:
+      - ./commentservice/.env.dev.compose
+    command: npm run start:dev
+    volumes:
+      - ./commentservice:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - '4003:3000'
   test_database:
     container_name: test_database
     image: postgres
