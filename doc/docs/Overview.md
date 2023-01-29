@@ -8,5 +8,4 @@ sidebar_position: 1
 | ------------ | ------------------------------------------------------- |
 | **Analysis** | [<u>Concept</u>](/docs/Analysis/Concept)                |
 | **Design**   | [<u>Architecture Design</u>](/docs/Design/SystemDesign) |
-| **Research** |                                                         |
-|              |                                                         |
+| **Research** | [<u>Google Sub Pub</u>](/docs/Design/GoogleSubPub)      |
