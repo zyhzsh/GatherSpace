@@ -17,6 +17,18 @@ export class Event {
   @Column('jsonb')
   hoster: { userId: string };
 
+  @Column()
+  location: string;
+
+  @Column()
+  imageurl: string;
+
+  @Column()
+  startDate: Date;
+
+  @Column()
+  endDate: Date;
+
   @Column('jsonb', { default: [] })
   participants: any;
 

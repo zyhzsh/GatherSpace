@@ -5,6 +5,8 @@ import {
   IsOptional,
   ValidateNested,
   IsUUID,
+  IsDate,
+  IsEmail,
 } from 'class-validator';
 
 export class HosterDto {
@@ -13,7 +15,7 @@ export class HosterDto {
   readonly userId: string;
 }
 
-export class ParticioantsDto {
+export class ParticioantDto {
   @IsNotEmpty()
   @IsString()
   readonly userId: string;
@@ -44,10 +46,22 @@ export class CreateEventDto {
   @IsArray()
   @IsOptional()
   @ValidateNested({ each: true })
-  readonly participants: ParticioantsDto;
+  readonly participants: ParticioantDto;
 
   @IsArray()
   @IsOptional()
   @ValidateNested({ each: true })
   readonly announcements: AnnouncementDto;
+
+  @IsString()
+  readonly location: string;
+
+  @IsDate()
+  readonly startDate: Date;
+
+  @IsDate()
+  readonly endDate: Date;
+
+  @IsString()
+  readonly imageurl: string;
 }
