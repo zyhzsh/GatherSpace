@@ -8,9 +8,7 @@ import CreateEventForm from './CreateEventForm';
 const CreateEventModal = () => {
   const open = useEventStore((state) => state.createEventModalOpenState);
   const toggle = useEventStore((state) => state.toggleCreateEvenModal);
-
   const cancelButtonRef = useRef(null);
-
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog

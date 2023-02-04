@@ -4,9 +4,7 @@ import {
   IsString,
   IsOptional,
   ValidateNested,
-  IsUUID,
   IsDate,
-  IsEmail,
 } from 'class-validator';
 
 export class HosterDto {
@@ -27,7 +25,6 @@ export class ParticioantDto {
 export class AnnouncementDto {
   @IsNotEmpty()
   @IsString()
-  @IsUUID()
   readonly announcementId: string;
 
   @IsString()

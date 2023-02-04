@@ -54,7 +54,7 @@ const Events = () => {
       </div>
       {/* Sub menu */}
       <div className="w-full flex justify-center">
-        <div className="w-5/6 mx-auto max-w-screen-xl flex justify-between">
+        <div className="w-5/6 mx-auto max-w-screen-xl flex gap-2">
           {/* create button */}
           <IconButton onClick={() => OpenCreateEventModal(true)}>
             <PlusIcon className="w-6" />

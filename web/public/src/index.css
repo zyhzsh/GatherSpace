@@ -7,11 +7,11 @@ html {
   /* background-color: #f2f0f0; */
   background: linear-gradient(-45deg, #ee7752, #f2f0f0, #23a6d5, #f0fdfa);
   background-size: 400% 400%;
-  /* animation: gradient 20s ease infinite; */
+  animation: gradient 20s ease infinite;
   height: 100vh;
 }
 
-/* @keyframes gradient {
+@keyframes gradient {
   0% {
     background-position: 0% 50%;
   }
@@ -21,7 +21,7 @@ html {
   100% {
     background-position: 0% 50%;
   }
-} */
+}
 
 ::-webkit-scrollbar {
   width: 10px;
@@ -34,7 +34,4 @@ html {
 }
 ::-webkit-scrollbar-track:hover {
   background: #555;
-}
-.rdrdefinedrangeswrapper: {
-  display: 'none' !important;
 }

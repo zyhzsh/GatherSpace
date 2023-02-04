@@ -1,4 +1,3 @@
-//import reactLogo from './assets/react.svg';
 import Header from './components/Header';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
@@ -8,10 +7,17 @@ import Profile from './pages/Profile';
 import Events from './pages/Events';
 import Favorite from './pages/Favorite';
 import CreateEventModal from './components/CreateEventModal';
+import { useEffect } from 'react';
+import { useUserStore } from './store';
 function App() {
-  const { isAuthenticated } = useAuth0();
-
-  if (isAuthenticated) {
+  const { user } = useAuth0();
+  const login = useUserStore((state) => state.login);
+  useEffect(() => {
+    if (user) {
+      login(user);
+    }
+  }, [user]);
+  if (user) {
     return (
       <Router>
         <Header />
@@ -29,10 +35,11 @@ function App() {
         </Routes>
       </Router>
     );
-  } else if (!isAuthenticated) {
+  } else if (!user) {
     return <Login />;
   }
   return <>Loading...</>;
 }
 
 export default App;
+``;

@@ -111,10 +111,12 @@ export class EventService {
 
     let result = [];
     result = await this.eventRepository.find({
-      where: {
-        hoster: { userId: userId },
-        participants: Raw(() => `participants @> '[{"userId":"${userId}"}]'`),
-      },
+      where: [
+        { hoster: { userId: userId } },
+        {
+          participants: Raw(() => `participants @> '[{"userId":"${userId}"}]'`),
+        },
+      ],
       skip: offset,
       take: limit,
     });
@@ -122,6 +124,7 @@ export class EventService {
     return result;
   }
 
+  //TODO: implement
   async update(eventId: string, updateEventDto: UpdateEventDto) {
     const updateEvent = await this.findOne(eventId);
     updateEvent.title = updateEventDto.title;
@@ -129,7 +132,7 @@ export class EventService {
     updateEvent.participants = updateEventDto.participants;
     return await this.eventRepository.save(updateEvent);
   }
-
+  //TODO: implement
   async updateMyEvent(eventId: string, updateEventDto: UpdateEventDto, userId) {
     const updateEvent = await this.findOne(eventId);
     if (updateEvent?.hoster?.userId !== userId) {

@@ -46,7 +46,6 @@ export default function Header() {
   const { logout, user } = useAuth0();
 
   const currentPage = useLocation();
-
   useEffect(() => {
     window.addEventListener(
       'resize',
@@ -85,7 +84,11 @@ export default function Header() {
           className="cursor-pointer py-1.5 font-normal"
         >
           <Link to="profile">
-            <Avatar src={user?.picture} size="md" />
+            <Avatar
+              src={user?.picture}
+              size="md"
+              referrerPolicy="no-referrer"
+            />
           </Link>
         </Typography>
         <div className="hidden lg:block">{navList()}</div>
