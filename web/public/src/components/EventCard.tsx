@@ -6,7 +6,6 @@ import {
   CardBody,
   CardFooter,
   Typography,
-  IconButton,
 } from '@material-tailwind/react';
 import { PencilSquareIcon } from '@heroicons/react/24/outline';
 
@@ -33,7 +32,7 @@ const EventCard = ({
     <Card className="min-w-[160px] max-w-[360px]  min-h-[200px]  max-h-[300px]">
       <CardHeader className="relative max-h-40">
         {isOwner && (
-          <PencilSquareIcon className="absolute right-1 top-1 rounded-lg w-6 text-cyan-100 hover:text-cyan-300" />
+          <PencilSquareIcon className="absolute right-1 top-1 rounded-lg w-6 text-blue-100 hover:text-blue-300" />
         )}
         <img src={imageurl} alt="img-blur-shadow" className="w-full h-full" />
       </CardHeader>

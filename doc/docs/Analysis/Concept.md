@@ -5,57 +5,49 @@ import VENN from '@site/src/img/venn-diagram.png';
 
 ## Ideas of origin
 
-It's commonly happening for me, at least the people I know, who are willing to share/ask for photos and videos after returning from an event, holiday, family gathering, etc.
+It is a common practice, among my associates, to share and request photos and videos after attending events, holidays, family gatherings, etc. My sister, who is a mother of three, also encounters this issue. Upon her return from an event, her WeChat/WhatsApp is inundated with images and videos shared by others. Although this is a convenient method of sharing, it presents difficulties in organizing and contextualizing these memories, making it difficult to recall the emotions and thoughts associated with each moment. This is an issue that I have experienced as well, despite not being an avid user of social media.
 
-My sister is a mother of a three-year-old child. Every time she returned from an event, her WeChat/WhatApps were always drowned by photos and videos. It works fine to share these photos and videos via a chat app. But it's not handy when she wants to organize the images and videos. And one day, when she wants to look back at those memories, it just loses the context. It isn't easy to let her recall how she or her friends thought and felt about the moment.
-
-The same experience happened to me as well, and, I am not a person who loves spending time photographing and posting them on social media, but I still want to see them and know what people think about them. Besides, someone must be keen on sharing and posting or making a scrapbook for themselves. Besides, someone must be willing to share, post, or create a scrapbook.
-
-Therefore, I was asking myself: Is it possible to make an application or website to help solve this problem?
-More importantly, I could practice the knowledge I have learned from the previous semester to build a scalable solution.
+As a result, I have been contemplating the creation of an application or website that would address this challenge. I envision using the knowledge and skills I have gained in my previous academic term to develop a scalable solution.
 
 ## The basic problems and requrements
 
-To further enhance the ideas behind it, I took a couple of minutes to think about some issues or problems that this project will resolve. The picture below shows some general thoughts I had.
+To further solidify the concept, I took some time to reflect on the issues and challenges that this project aims to resolve. The following image displays my general thoughts on the matter.
 
 <img src={WWWWWH} />
 
-With the ideas above, in general, the software solution should be capable of solving the following:
+In general, the software solution should address the following key challenges:
 
-- Solved the user's difficulty sharing photos, videos, and thoughts after an activity.
-- Solved the user's difficulty finding photos, videos, and thoughts after an activity.
-- Solved the user's difficulty recalling their memory via photos and videos. (Aftertaste, Reminiscence)
+- Address the difficulty of sharing photos, videos, and thoughts after an activity.
+- Address the difficulty of finding photos, videos, and thoughts after an activity.
+- Address the difficulty of recalling memories through photos and videos (Aftertaste, Reminiscence).
 
-Combined with my learning goal, it should aslo include:
+Additionally, considering my learning objectives, the solution should:
 
-- The solution should be scalable.
-- There are not many budget for this project, so try to reduce the amount of cost is needed.
+- Be scalable.
+- Have a limited budget, so cost-effectiveness should be a consideration in the development process.
 
 ## The though of product positioning and business value
 
-Off course, there are many existing solutions on the market could solved the problem in various ways.  
-Here are some examples in the diagram below.
+Of course, there are numerous solutions available in the market that address the outlined challenges in various ways. The following image displays some examples.
 
 <img src={VENN} />
+The aforementioned products have their own unique positions in the market. While they may address some of the previously discussed challenges, they do not provide a comprehensive or straightforward solution, requiring the user to put in a certain amount of effort to achieve the desired outcome.
 
-The products mentioned above have their positioning. These products can solve some of the problems discussed previously but don't provide a complete or straightforward solution. Therefore, the users must go through a certain degree of study/effort to achieve the desired outcome.
+The primary goal is to offer a solution that enables users to easily share and preserve memories from family, friend, school, or other life events for a long period of time.
 
-Back to the original intention, the goal is to provide a solution that helps the user easily share the joy kept in the memory for a long time after/during family, friends, school, or any other gathering life event.
+The product is not:
 
-So the product is not:
+- A social media platform like Facebook, Twitter, or Weibo.
+- A content-sharing platform like YouTube, TikTok, or Instagram.
+- A pure photo management and sharing cloud storage service like Google Photos.
+- An event ticket selling or gathering social party platform like Eventbee.
 
-- a social media like facebook ,twitter, weibo.
-- a content-sharing platform like youtube, tiktok or instagram.
-- a pure photo management and sharing cloud storage like google photos.
-- an event ticket selling or helping people to join a gathering social party platform like eventbee.
+Instead, it is:
 
-It is:
+- A platform where people can safely share memories with those they know.
+- A platform where people can leave their thoughts about events or others' posts.
+- A platform where people can easily manage and revisit their memories from life events.
 
-- where people can safely share their memory with the people they know.
-- where people can leave their own words about the event or others' posts.
-- where people can easily manage and bring back their nostalgia from a life event from time to time.
+Thus, the product is positioned in a sweet spot between social media, event hosting, and photo sharing.
 
-Therefore, the position is located on a bit sweetspot between social media,event hosting,and photo sharing.
-
-The part about the profit model may need further analysis because it sounds like a pure internal sharing platform, and there seems to be no room for profit.
-How to make people or schools, companies, and other institutions pay for this service needs further research and analysis.
+The profit model for the product requires further analysis as it operates as a pure internal sharing platform, with no apparent room for profit. Research and analysis are needed to determine how to make people, schools, companies, and other institutions pay for the service.

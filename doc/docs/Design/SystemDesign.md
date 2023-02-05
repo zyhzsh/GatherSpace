@@ -7,7 +7,7 @@ import DraftArchitectureAnalysis from '@site/src/img/draft-analysis-architecture
 
 <img src={DraftArchitecture} />
 
-The image above shows the initial ideas of the whole system while designing. It delivers three potential solutions, each of which has pros and cons. Check the analysis below.
+The image above displays the preliminary conceptualization of the system design. It presents three potential solutions, each with its own advantages and disadvantages. A thorough examination of the analysis is provided below.
 
 ---
 
@@ -25,15 +25,15 @@ _Factors that needed take into account_:
 
 - Amount of users
 
-  _The project was intended to be able scaling in the future, the only concern was: does it worth to spending extra hours to maintain the deloyment in the very beginning phase?_
+  _The goal of the project is to ensure scalability in the future, however, the concern arises regarding the investment of additional time for maintenance and deployment during the initial phase, and whether it is deemed worthwhile._
 
 - Budget
 
-  _As the project itself are still in proof of concept level, so the cost should be as less as possible in this phase_
+  _Since the project is still in its proof of concept phase, it is important to keep costs as low as possible during this stage._
 
 - Maintenance cost
 
-  _Thinking about the maintenace cost: Managning,DevOps,Cloud Service and also for the future visioning_
+  _When considering maintenance costs, it is important to take into account factors such as management, DevOps, cloud service, and future planning._
 
 - Study cost
 
@@ -41,9 +41,7 @@ _Factors that needed take into account_:
 
 - Benefits form learning perspective
 
-After all the the winner is: Microservers event driven (Serverless)
-
-The image below shows the how do i evaluate it.
+After considering all factors, the Microservices event driven (Serverless) approach emerged as the most suitable solution. The evaluation process is depicted in the image below.
 
 <img src={DraftArchitectureAnalysis} />
 <a href="https://d-x.vercel.app/"><u> made by decision matrix</u></a>
